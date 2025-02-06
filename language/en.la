@@ -1,7 +1,7 @@
 {
     "MAIN":{
-        "PROGRAM":" <---->",
-        "RC":"R.C",
+        "PROGRAM":" Hotspot",
+        "RC":"VTM",
         "TRYDEMO":"Try demo",
         "OPENING":"opening..."
     },
