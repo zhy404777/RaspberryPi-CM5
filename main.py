@@ -4,6 +4,7 @@ import socket
 
 current_selection = 1
 
+
 def show_battery():
     lcd_rect(200, 0, 320, 25, color=splash_theme_color, thickness=-1)
     draw.bitmap((270, 4), bat)
@@ -32,7 +33,9 @@ def show_battery():
     except:
         print("uart error!")
 
+
 # draw methods
+
 
 def main_program():
     global key_state_left, key_state_right, key_state_down, current_selection
@@ -61,21 +64,21 @@ def main_program():
         if current_selection == 1:
             current_selection = 3
         else:
-            current_selection = 1
+            current_selection -= 1
 
     if key_state_right == 1:
         show_battery()
-        if current_selection == 1:
-            current_selection = 3
-        else:
+        if current_selection == 3:
             current_selection = 1
+        else:
+            current_selection += 1
 
     if current_selection == 1:
         lcd_rect(0, 188, 320, 240, color=btn_unselected, thickness=-1)
         lcd_rect(0, 188, 110, 240, color=btn_selected, thickness=-1)
         lcd_draw_string(draw, 7, 195, la["MAIN"]["RC"], color=color_white, scale=font2)
         lcd_draw_string(
-            draw, 120, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
+            draw, 112, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
         )
         lcd_draw_string(
             draw, 215, 195, la["MAIN"]["TRYDEMO"], color=color_white, scale=font2
@@ -87,11 +90,9 @@ def main_program():
         lcd_rect(0, 188, 320, 240, color=btn_unselected, thickness=-1)
         lcd_rect(110, 188, 210, 240, color=btn_selected, thickness=-1)
         lcd_draw_string(
-            draw, 7, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
+            draw, 112, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
         )
-        lcd_draw_string(
-            draw, 120, 195, la["MAIN"]["RC"], color=color_white, scale=font2
-        )
+        lcd_draw_string(draw, 7, 195, la["MAIN"]["RC"], color=color_white, scale=font2)
         lcd_draw_string(
             draw, 215, 195, la["MAIN"]["TRYDEMO"], color=color_white, scale=font2
         )
@@ -103,7 +104,7 @@ def main_program():
         lcd_rect(210, 188, 320, 240, color=btn_selected, thickness=-1)
         lcd_draw_string(draw, 7, 195, la["MAIN"]["RC"], color=color_white, scale=font2)
         lcd_draw_string(
-            draw, 120, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
+            draw, 112, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
         )
         lcd_draw_string(
             draw, 215, 195, la["MAIN"]["TRYDEMO"], color=color_white, scale=font2
@@ -121,15 +122,15 @@ def main_program():
                 draw, 25, 195, la["MAIN"]["OPENING"], color=color_white, scale=font2
             )
             time.sleep(1)
-            os.system("python3 edublock.py")
+            os.system("python3 demos/hotspot.py")
             lcd_rect(0, 188, 160, 240, color=btn_selected, thickness=-1)
             lcd_draw_string(
                 draw, 25, 195, la["MAIN"]["PROGRAM"], color=color_white, scale=font2
             )
 
         if current_selection == 1:
-            lang=language()
-            os.system('python3 app/app_dogzilla_cn.py')
+            lang = language()
+            os.system("python3 app/app_dogzilla_cn.py")
             # if lang=='cn':
             #     os.system('python3 app/app_dogzilla_cn.py')
             # else:
@@ -179,7 +180,7 @@ elif dog_type == "L":
 elif dog_type == "R":
     firmware_info = "RIDER"
     version = "xgorider"
-    
+
 lcd_draw_string(draw, 210, 133, firmware_info, color=color_white, scale=font1)
 
 show_battery()
