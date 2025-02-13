@@ -1,5 +1,5 @@
 import sys
-from gpt_utils import *
+from gpt_utils_cn import *
 
 # ------------------------------------------------------------------
 quitmark = 0
@@ -28,6 +28,8 @@ try:
     net = True
 except:
     net = False
+
+print(net)
 
 if net:
     dog = XGO(port="/dev/ttyAMA0", version="xgolite")

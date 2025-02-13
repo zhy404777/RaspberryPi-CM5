@@ -455,21 +455,21 @@ while True:
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "volume":
                 os.system("python3 ./demos/volume.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "chatgpt":
-                os.system("python3 ./demos/chatgpt_en.py")
+                os.system("python3 ./demos/chatgpt.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "gpt_cmd":
-                os.system("python3 ./demos/gpt_cmd_en.py")
+                os.system("python3 ./demos/gpt_cmd.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "ball_catch":
                 os.system("python3 ./demos/ball_catch.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "gpt_draw":
-                os.system("python3 ./demos/gpt_draw_en.py")
+                os.system("python3 ./demos/gpt_draw.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "gpt_rec":
-                os.system("python3 ./demos/gpt_rec_en.py")
+                os.system("python3 ./demos/gpt_rec.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "follow_person":
                 os.system("python3 ./demos/follow_person.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "follow_line":
                 os.system("python3 ./demos/follow_line.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "gpt_free":
-                os.system("python3 ./demos/gpt_free_en.py")
+                os.system("python3 ./demos/gpt_free.py")
             elif MENU_ITEMS[MENU_CURRENT_SELECT][2] == "pose_dog":
                 os.system("python3 ./demos/pose_dog.py")
             print("program done")
